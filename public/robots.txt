@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /superadmin
+Disallow: /superadmin/*
+Disallow: /api/*
+
+Sitemap: https://arisotechnologies.com/sitemap.xml
