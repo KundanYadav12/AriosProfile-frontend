@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #fafcff;
+  --color-foreground: #090d16;
+  --color-muted: #64748b;
+  --color-accent: #006ec7;
+  --color-accent-hover: #0c8de8;
+  --color-accent-light: #e0edfe;
+  --color-border: #e2e8f0;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f8fafc;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism Classes */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 20px 25px -5px rgba(0, 0, 0, 0.02);
+}
+
+.glass-card-hover {
+  transition: all 0.4s var(--ease-standard);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(12, 141, 232, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 110, 199, 0.12), 0 0 0 1px rgba(12, 141, 232, 0.15);
+}
+
+/* Subtle Gradient Glows */
+.gradient-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(12, 141, 232, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #090d16 0%, #006ec7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #006ec7 0%, #36a8f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cursor Trail & Magnetic styling */
+@media (pointer: coarse) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+}
+
+/* Accessibility: Prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .custom-cursor-container {
+    display: none !important;
+  }
+}
